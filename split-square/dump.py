@@ -48,6 +48,9 @@ Of course, these can nested deeply and still work::
 
 def dump(s):
     """Print each square on a new line."""
+    if isinstance(s, int):
+        return str(s)
+    return " ".join(dump(part) for part in s)
 
 
 if __name__ == "__main__":
